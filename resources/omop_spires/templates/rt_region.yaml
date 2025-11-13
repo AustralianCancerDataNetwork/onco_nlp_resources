@@ -1,0 +1,122 @@
+id: ohdsi:rt_region
+name: rt_region
+title: rt_region with modifiers 
+description: >-
+  A template for extracting radiotherapy regions from semi-structured data that can be grounded in ohdsi-compliant vocabs
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  linkml: https://w3id.org/linkml/
+  omop: https://athena.ohdsi.org/search-terms/terms#
+  owl: "http://www.w3.org/2002/07/owl#"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+imports:
+  - linkml:types
+  - core
+  - omop_convention
+classes:
+  Region:
+    tree_root: true
+    attributes:
+      label:
+        description: >-
+          The name of the radiation therapy region verbatim as it appears in the text.
+        range: string
+      # give the model two chances to ground the region - some models show preference for more or less specificity
+      # need to codfy disambiguation - closest match?
+      location:
+        description: >-
+          Target location of the radiation therapy region without modifiers. 
+          Remove modifiers like radiation technique, relative location, laterality, leaving just the target location.
+        range: BodySite
+      body_site:
+        description: >-
+          Specific body site or organ mentioned in the radiation therapy region. 
+          This should be a list of each discrete anatomical site. 
+          Do not use abbreviations or acronyms.
+        range: BodySite
+        required: false
+        multivalued: true
+      laterality:
+        description: >-
+          The laterality of the radiation therapy region, if this is mentioned. This should be "left", "right", 
+          "bilateral", or "na" if not specified. It is often specified as an abbreviation like 'lt', 'rt', (l), (r), r, l etc.
+        range: Laterality
+        required: false
+      relative_location:
+        description: >-
+          The relative location of the radiation therapy region, if this is mentioned. This should be a specific 
+          modifier relative to the target specified organ, such as "upper quadrant", "apex", "mid", "whole", 
+          "base", "bed" etc, or "na" if not specified. Do not use abbreviations. Note that this is sometimes 
+          written in a concise form without a space between the modifier and the organ, such as "proxsv" and also
+          may be missing prepositions such as "of" or "to", e.g. "rt apex lung", "lt base prostate"
+          Do not infer if not specified. 
+        range: string
+        required: false
+      technique:
+        description: >-
+          The technique used for the radiation therapy region, if this is mentioned. This should be a specific 
+          technique, such as "IMRT", "SBRT", "3DCRT", "SABR", "plan", "boost", "ph2" etc. 
+          Do not infer if not specified. 
+        range: string
+        required: false
+      spinal_region:
+        description: >-
+          The spinal region of the radiation therapy region, if applicable. This should be a specific 
+          spinal region, such as "cervical", "thoracic", "lumbar", "sacral", etc, or "na" if not specified. 
+          Note that these are often written in an abbreviated form with a letter and a number such as 
+          c2, t3, l4, s1. Do not use abbreviations.
+        range: SpinalRegion
+        required: false
+        multivalued: true
+
+  BodySite:
+    is_a: OMOPHierarchy
+    id_prefixes: 
+      - omop
+    annotations: 
+      annotators: 'OMOP_OWL/ohdsi_test.db'
+      parent_id: omop:4190005, omop:4240671 # body site, body organ - in order of preference
+
+  Laterality:
+    is_a: OMOPEnum
+    attributes:
+      concept_name:
+        range: LateralityEnum
+    annotations: 
+      meaning: concept_id
+      
+  SpinalRegion:
+    is_a: OMOPEnum
+    attributes:
+      concept_name:
+        range: SpinalRegionEnum
+    annotations: 
+      meaning: concept_id
+  
+enums:
+  LateralityEnum:
+    permissible_values:
+      left:
+        meaning: omop:45883143
+      right:
+        meaning: omop:45881626
+      bilateral:
+        meaning: omop:21498852
+      na:
+        description: The radiation therapy region does not specify laterality
+  SpinalRegionEnum:
+    permissible_values:
+      cervical:
+        meaning: omop:4046743
+      thoracic:
+        meaning: omop:4047490
+      lumbar:
+        meaning: omop:4045660
+      sacral:
+        meaning: omop:44783588
+      coccygeal:
+        meaning: omop:4132900
+      na:
+        description: The radiation therapy region does not specify a spinal region
+  
