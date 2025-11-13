@@ -13,7 +13,7 @@ Creating a shared place to:
 
 | Endpoint                       | Feasibility | Priority | Maturity | Shareability | Link                                        |
 | ------------------------------ | ----------- | -------- | -------- | ------------ | ------------------------------------------- |
-| **Performance Status (ECOG)**  | High        | High     | High     | High         | [Performance Status](endpoints/performance-status.md) |
+| **Performance Status (ECOG)**  | High        | High     | High     | High         | [Performance Status](endpoints/performance_status.md) |
 | **Smoking History**            | High        | Medium   | Medium   | Medium       | [Smoking History](endpoints/smoking.md)       |
 | **Actionable Genomic Variant** | Low–Medium  | High     | Low      | Medium       | [Genomic Variant](endpoints/genomic_variants.md)       |
 | **Oral Chemotherapy Use**      | Medium      | Medium   | Low      | Low–Medium   | [Oral Chemotherapy](endpoints/oral_chemo.md)          |
