@@ -1,0 +1,5 @@
+title: Methods
+nav:
+  - prompting.md
+  - tokenization.md
+  - value_extraction.md

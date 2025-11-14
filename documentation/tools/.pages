@@ -1,0 +1,5 @@
+title: Tools
+nav:
+  - medspaCy.md
+  - medtagger.md
+  - ontoGPT.md

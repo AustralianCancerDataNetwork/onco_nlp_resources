@@ -1,0 +1,6 @@
+title: Endpoints
+nav:
+  - endpoint_catalogue.md
+  - performance_status.md
+  - radiotherapy_regions.md
+  - genomic_variants.md

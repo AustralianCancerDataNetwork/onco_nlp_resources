@@ -1,4 +1,6 @@
-# Collaborative Prompt Library Guidelines  
+# Prompt Curation
+
+## Collaborative Prompt Library Guidelines  
 _A cross-site approach for reliable, versioned, and reproducible prompt engineering_
 
 Goal: set up and maintain a **shared prompt library**, ensuring that:
@@ -45,13 +47,13 @@ Each prompt definition file contains:
 
 ### Recommended Workflow for Collaborators
 
-1. Identify an [endpoint](../endpoints/) e.g. ECOG, radiotherapy region, variant of interest
+1. Identify an [endpoint](../endpoints/endpoint_catalogue.md) e.g. ECOG, radiotherapy region, variant of interest
 2. Define or update the LinkML schema, ensuring output fields match analytic needs 
-    - The schema definitions can be submitted to the [OntoGPT tool-specific configuration folder](../../resources/tool_specific_config/OntoGPT/templates/)
+    - The schema definitions can be submitted to the [OntoGPT tool-specific configuration folder]({{ github_base }}/resources/tool_specific_config/OntoGPT/templates/)
 3. Generate the Pydantic model
 4. Create a new prompt file
 5. Write or refine the system prompt + examples, includin few-shot examples whenever possible
 6. Validate prompts
-7. Submit draft to [prompt library](../../resources/prompt_library/) for network validation & iteration
+7. Submit draft to [prompt library]({{ github_base }}/resources/tool_specific_config/OntoGPT/spires_prompts/) for network validation & iteration
 
 _Note: Detailed instructions for steps 3 through 6 can be found at_ https://github.com/AustralianCancerDataNetwork/prompt-o

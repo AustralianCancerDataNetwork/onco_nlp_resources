@@ -1,0 +1,42 @@
+# Badge reference for README:
+# ![Deploy](https://github.com/AustralianCancerDataNetwork/onco_nlp_resources/actions/workflows/deploy.yml/badge.svg)
+
+name: Deploy MkDocs Site
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v1
+
+      - name: Sync dependencies from uv.lock
+        run: uv sync --frozen
+
+      - name: Install MkDocs + plugins
+        run: |
+          uv pip install \
+            mkdocs-material \
+            mkdocs-mermaid2-plugin \
+            mkdocs-awesome-pages-plugin \
+            mkdocs-include-markdown-plugin \
+            mkdocs-macros-plugin \
+            mkdocs-table-reader-plugin
+
+      - name: Build MkDocs site
+        run: uv run mkdocs build --clean
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

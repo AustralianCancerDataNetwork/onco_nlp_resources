@@ -1,3 +1,14 @@
+<p align="center">
+  <a href="https://github.com/AustralianCancerDataNetwork/onco_nlp_resources/actions/workflows/deploy.yml">
+    <img src="https://github.com/AustralianCancerDataNetwork/onco_nlp_resources/actions/workflows/deploy.yml/badge.svg" alt="Deploy Status">
+  </a>
+
+  <a href="https://australiancancerdatanetwork.github.io/onco_nlp_resources/">
+    <img src="https://img.shields.io/badge/docs-github%20pages-blue.svg" alt="Documentation">
+  </a>
+</p>
+
+
 # Oncology NLP Endpoint Catalogue
 A Collaborative Resource for Practical, Shareable Clinical NLP Tools
 
@@ -10,37 +21,6 @@ Creating a shared place to:
 * map community expertise
 * share ready-to-use notebooks, heuristics, regexes, and workflows
 * avoid duplicative effort across sites
-
----
-
-# Introduction
-
-For now, this is just holding a list of files and statuses - to add more context later
-
-## Endpoints
-
-* [Performance Status](./documentation/endpoints/performance_status.md)
-* [Radiotherapy Regions](./documentation/endpoints/radiotherapy_regions.md)
-
-
-## Tasks
-
-* [Tokenization](./documentation/task_specific/tokenization.md)
-* [Prompting](./documentation/task_specific/prompting.md)
-
-## Tools
-
-* [medspaCy](./documentation/tool_specific/medspaCy.md)
-
----
-
-| Endpoint                       | Feasibility | Priority | Maturity | Shareability | Link                                        |
-| ------------------------------ | ----------- | -------- | -------- | ------------ | ------------------------------------------- |
-| **Performance Status (ECOG)**  | High        | High     | High     | High         | [Performance Status](./documentation/endpoints/performance_status.md) |
-| **Smoking History**            | High        | Medium   | Medium   | Medium       | [Smoking History](./documentation/endpoints/smoking.md)       |
-| **Actionable Genomic Variant** | Low–Medium  | High     | Low      | Medium       | [Genomic Variant](./documentation/endpoints/genomic_variants.md)       |
-| **Oral Chemotherapy Use**      | Medium      | Medium   | Low      | Low–Medium   | [Oral Chemotherapy](./documentation/endpoints/oral_chemo.md)          |
-| **Radiotherapy Site / Region** | High        | Medium   | Medium   | High         | [Radiotherapy Region](./documentation/endpoints/radiotherapy_regions.md)         |
 
 ---
 

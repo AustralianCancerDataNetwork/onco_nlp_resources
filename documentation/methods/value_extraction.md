@@ -1,5 +1,3 @@
-# MedspaCy & spaCy configurations
-
 ## ValueExtractor
 
 ValueExtractor provides a utility class to wrap spaCy’s Matcher for the identification of text spans corresponding to specific clinical entities of the form `[label] [value]`. Extracting a usable `value` applies logic to match numeric (or literal) values within the overall labelled span.

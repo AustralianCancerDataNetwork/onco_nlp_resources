@@ -1,0 +1,67 @@
+site_name: Oncology NLP Library
+site_description: Community-shared oncology NLP tools, prompts, models, and documentation
+site_url: https://australiancancerdatanetwork.github.io/onco_nlp_resources/
+repo_url: https://github.com/AustralianCancerDataNetwork/onco_nlp_resources/
+repo_name: AustralianCancerDataNetwork/onco_nlp_resources
+
+docs_dir: documentation
+theme:
+  name: material
+  custom_dir: theme
+  palette:
+  - scheme: default
+    primary: indigo
+    accent: pink
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  - scheme: slate
+    primary: indigo
+    accent: pink
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.integrate
+
+plugins:
+  - search
+  - autorefs
+  - mermaid2
+  - include-markdown
+  - awesome-pages
+  - macros
+  - table-reader
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+  - tables
+  - def_list
+  - pymdownx.extra
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
+extra:
+  enable_banner: true
+  banner_title: "Oncology NLP Resource Library"
+  banner_subtitle: "Reusable prompts, extractors, schemas, and tools for clinical oncology NLP"
