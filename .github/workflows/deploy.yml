@@ -33,7 +33,8 @@ jobs:
             mkdocs-awesome-pages-plugin \
             mkdocs-include-markdown-plugin \
             mkdocs-macros-plugin \
-            mkdocs-table-reader-plugin
+            mkdocs-table-reader-plugin \
+            mkdocs-autorefs
 
       - name: Build MkDocs site
         run: uv run mkdocs build --clean
