@@ -19,18 +19,18 @@ For now, this is just holding a list of files and statuses - to add more context
 
 ## Endpoints
 
-[Performance Status](./documentation/endpoints/performance_status.md)
-[Radiotherapy Regions](./documentation/endpoints/radiotherapy_regions.md)
+* [Performance Status](./documentation/endpoints/performance_status.md)
+* [Radiotherapy Regions](./documentation/endpoints/radiotherapy_regions.md)
 
 
 ## Tasks
 
-[Tokenization](./documentation/task_specific/tokenization.md)
-[Prompting](./documentation/task_specific/prompting.md)
+* [Tokenization](./documentation/task_specific/tokenization.md)
+* [Prompting](./documentation/task_specific/prompting.md)
 
 ## Tools
 
-[medspaCy](./documentation/tool_specific/medspaCy.md)
+* [medspaCy](./documentation/tool_specific/medspaCy.md)
 
 ---
 
