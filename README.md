@@ -11,14 +11,38 @@ Creating a shared place to:
 * share ready-to-use notebooks, heuristics, regexes, and workflows
 * avoid duplicative effort across sites
 
+---
+
+# Introduction
+
+For now, this is just holding a list of files and statuses - to add more context later
+
+## Endpoints
+
+[Performance Status](./documentation/endpoints/performance_status.md)
+[Radiotherapy Regions](./documentation/endpoints/radiotherapy_regions.md)
+
+
+## Tasks
+
+[Tokenization](./documentation/task_specific/tokenization.md)
+[Prompting](./documentation/task_specific/prompting.md)
+
+## Tools
+
+[medspaCy](./documentation/tool_specific/medspaCy.md)
+
+---
+
 | Endpoint                       | Feasibility | Priority | Maturity | Shareability | Link                                        |
 | ------------------------------ | ----------- | -------- | -------- | ------------ | ------------------------------------------- |
-| **Performance Status (ECOG)**  | High        | High     | High     | High         | [Performance Status](endpoints/performance_status.md) |
-| **Smoking History**            | High        | Medium   | Medium   | Medium       | [Smoking History](endpoints/smoking.md)       |
-| **Actionable Genomic Variant** | Low–Medium  | High     | Low      | Medium       | [Genomic Variant](endpoints/genomic_variants.md)       |
-| **Oral Chemotherapy Use**      | Medium      | Medium   | Low      | Low–Medium   | [Oral Chemotherapy](endpoints/oral_chemo.md)          |
-| **Radiotherapy Site / Region** | High        | Medium   | Medium   | High         | [Radiotherapy Region](endpoints/radiotherapy_regions.md)         |
+| **Performance Status (ECOG)**  | High        | High     | High     | High         | [Performance Status](./documentation/endpoints/performance_status.md) |
+| **Smoking History**            | High        | Medium   | Medium   | Medium       | [Smoking History](./documentation/endpoints/smoking.md)       |
+| **Actionable Genomic Variant** | Low–Medium  | High     | Low      | Medium       | [Genomic Variant](./documentation/endpoints/genomic_variants.md)       |
+| **Oral Chemotherapy Use**      | Medium      | Medium   | Low      | Low–Medium   | [Oral Chemotherapy](./documentation/endpoints/oral_chemo.md)          |
+| **Radiotherapy Site / Region** | High        | Medium   | Medium   | High         | [Radiotherapy Region](./documentation/endpoints/radiotherapy_regions.md)         |
 
+---
 
 ## Open Questions
 * How do we best curate all the mapping targets in a single location for maintainability?
