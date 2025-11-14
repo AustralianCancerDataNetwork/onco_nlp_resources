@@ -8,14 +8,18 @@ docs_dir: documentation
 theme:
   name: material
   custom_dir: theme
+  highlightjs: true
+  icon: fontawesome/solid/stethoscope
   palette:
-  - scheme: default
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
     primary: indigo
     accent: pink
     toggle:
       icon: material/weather-night
       name: Switch to dark mode
-  - scheme: slate
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
     primary: indigo
     accent: pink
     toggle:
@@ -23,6 +27,9 @@ theme:
       name: Switch to light mode
   features:
     - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
     - navigation.tracking
     - navigation.sections
     - navigation.expand
@@ -43,12 +50,13 @@ plugins:
   - table-reader
 
 markdown_extensions:
-  - admonition
+  - smarty
   - attr_list
   - toc:
       permalink: true
   - tables
   - def_list
+  - pymdownx.blocks.admonition
   - pymdownx.extra
   - pymdownx.highlight
   - pymdownx.superfences
@@ -58,6 +66,8 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.magiclink
   - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.blocks.caption
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
 
